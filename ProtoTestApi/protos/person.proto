@@ -1,0 +1,53 @@
+syntax = "proto3"; 
+package prototestapi.protobuf;
+
+import "google/protobuf/wrappers.proto";
+//import "common/money.proto";
+
+option csharp_namespace = "ProtoTestApi.Protobuf";
+
+message CreatePersonRequest{
+
+    //unique number to identify your fields in the message binary format,
+    //and should not be changed once your message type is in use.
+    //string name = 1 [deprecated = true];//obsolote
+    string email = 2;
+
+    repeated Phone phones = 3;
+
+    //if you want to change name to first_name and last_name
+    //Don't change the field numbers for any existing fields
+    string first_name = 4;
+    string last_name = 5;
+    int32 age = 6;
+
+    google.protobuf.StringValue address = 15;
+    //reserved 1;
+    //reserved "name";
+}
+
+message CreatePersonResponse{
+    string name = 1;
+    int32 id = 2;
+    string email = 3;
+    repeated Phone phones = 4;
+    oneof timestamp {
+        int64 created = 5;
+        int64 updated = 6;
+    }
+    StatusType status_type = 7;
+    google.protobuf.StringValue address = 8;
+}
+
+message Phone {
+    string code = 1;
+    int32 number = 2;
+}
+
+enum StatusType {
+    UNKNOWN_STATUS_TYPE = 0;
+    CREATE = 1;
+    ACTIVE = 2;
+    DELETE = 3;
+}
+

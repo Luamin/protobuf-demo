@@ -1,0 +1,7 @@
+syntax = "proto3";
+package prototestapi.protobuf;
+
+message Money {
+    double amount = 1;
+    string currency = 2;
+}
