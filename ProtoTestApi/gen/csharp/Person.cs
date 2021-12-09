@@ -470,7 +470,7 @@ namespace ProtoTestApi.Protobuf {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public CreatePersonResponse() {
+  public CreatePersonResponse() {
       OnConstruction();
     }
 

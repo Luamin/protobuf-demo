@@ -1,8 +1,4 @@
-using System.Net.Http.Headers;
 using System.Collections.Generic;
-using System;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.AspNetCore.Mvc.Formatters;
 
 namespace ProtoTestApi
 {
